@@ -14,16 +14,6 @@ function App() {
   const [phone, setPhone] = useState("");
   const [termsChecked, setTermsChecked] = useState(false);
 
-  console.log([
-    { ora: time },
-    { hapi: step },
-    { name: firstName },
-    { lname: lastName },
-    { email: email },
-    { phone: phone },
-    { terms: termsChecked },
-  ]);
-
   const handleResetForm = () => {
     setStep(1);
     setTime(null);
