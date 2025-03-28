@@ -18,23 +18,33 @@ const ThirdStep = ({
           <table>
             <tbody>
               <tr>
-                <td>First Name:</td>
+                <td>
+                  <b>First Name:</b>
+                </td>
                 <td>{firstName}</td>
               </tr>
               <tr>
-                <td>Last Name:</td>
+                <td>
+                  <b>Last Name:</b>
+                </td>
                 <td>{lastName}</td>
               </tr>
               <tr>
-                <td>Email:</td>
+                <td>
+                  <b>Email:</b>
+                </td>
                 <td>{email}</td>
               </tr>
               <tr>
-                <td>Phone:</td>
+                <td>
+                  <b>Phone:</b>
+                </td>
                 <td>{phone}</td>
               </tr>
               <tr>
-                <td>Scheduled:</td>
+                <td>
+                  <b>Scheduled:</b>
+                </td>
                 <td>{time}</td>
               </tr>
             </tbody>

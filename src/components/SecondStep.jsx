@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SlArrowRight } from "react-icons/sl";
 import "./SecondStep.css";
 
@@ -15,18 +15,55 @@ const SecondStep = ({
   setTermsChecked,
   setStep,
 }) => {
+  const [errors, setErrors] = useState({});
+
+  const validateInputFields = () => {
+    const newErrors = {};
+
+    if (!/^[A-Za-z\s\-']+$/.test(firstName.trim())) {
+      newErrors.firstName = "Invalid characters in first name!";
+    }
+
+    if (!/^[A-Za-z\s\-']+$/.test(firstName.trim())) {
+      newErrors.lastName = "Invalid characters in last name!";
+    }
+
+    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.trim())) {
+      newErrors.email = "Please check your email address!";
+    }
+
+    if (!/^\d{10,}$/.test(phone.trim())) {
+      newErrors.phone = "Phone must be at least 10 digits!";
+    }
+
+    if (!termsChecked) {
+      newErrors.terms =
+        "You need to accept terms and conditions before submitting!";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateInputFields()) {
+      setStep(3);
+    }
+  };
+
   return (
     <section className="second-step">
       <h1>Add Your Personal Details</h1>
 
-      <form onSubmit={() => setStep(3)}>
+      <form onSubmit={handleSubmit}>
         <div className="form-input">
           <input
             type="text"
             placeholder="First name"
             onChange={(e) => setFirstName(e.target.value)}
           />
-          {/* <p className="error-text">Please enter your first name</p> */}
+          {errors.firstName && <p className="error-text">{errors.firstName}</p>}
         </div>
         <div className="form-input">
           <input
@@ -34,7 +71,7 @@ const SecondStep = ({
             placeholder="Last name"
             onChange={(e) => setLastName(e.target.value)}
           />
-          {/* <p className="error-text">Please enter your last name</p> */}
+          {errors.lastName && <p className="error-text">{errors.lastName}</p>}
         </div>
         <div className="form-input">
           <input
@@ -42,7 +79,7 @@ const SecondStep = ({
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          {/* <p className="error-text">Please enter your email</p> */}
+          {errors.email && <p className="error-text">{errors.email}</p>}
         </div>
         <div className="form-input">
           <input
@@ -50,7 +87,7 @@ const SecondStep = ({
             placeholder="Phone Number"
             onChange={(e) => setPhone(e.target.value)}
           />
-          {/* <p className="error-text">Please enter your phone number</p> */}
+          {errors.phone && <p className="error-text">{errors.phone}</p>}
         </div>
         <div className="form-input">
           <div className="checbox-input">
@@ -68,9 +105,7 @@ const SecondStep = ({
               rules and policies. We may update these terms from time to time.
             </label>
           </div>
-          {/* <p className="error-text">
-            You need to accept terms and conditions before submitting
-          </p> */}
+          {errors.terms && <p className="error-text">{errors.terms}</p>}
         </div>
         <button
           className="btn-submit"
