@@ -1,0 +1,34 @@
+.first-step {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.first-step h1 {
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+.first-step .first-content select {
+    outline: none;
+    padding: 16px;
+    width: 240px;
+    border-radius: 6px;
+    border: 2px solid #D3D3D3;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.first-step .first-content select:focus-visible {
+    border: 2px solid #000;
+}
+
+.first-step .first-content select option:first-of-type {
+    color: #D3D3D3;
+}
+
+.first-step .first-content p {
+    font-size: 12px;
+    padding: 15px 0;
+}

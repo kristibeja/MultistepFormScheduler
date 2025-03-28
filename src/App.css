@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header Styling */
+header {
+  border-bottom: 1px solid #D3D3D3;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-content .logo {
+  font-family: sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.header-content .logo i {
+  color: #66CCFF;
+}
+
+.header-content .contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: #3333CC;
+  font-weight: 600;
+}
+
+.header-content .contact-info a {
+  text-decoration: none;
+  color: #3333CC;
+}
+
+/* Footer Styling */
+footer .footer-links {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+footer .footer-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer .footer-content {
+  background-color: #E8E8E8;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer .footer-content p {
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+footer .footer-content p:not(:last-child) {
+  padding-bottom: 20px;
+}
+
+/* Other */
+.btn-submit {
+  position: relative;
+  padding: 16px 50px;
+  border: none;
+  border-radius: 8px;
+  min-width: 240px;
+  color: #fff;
+  background-color: #3366FF;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.btn-submit svg {
+  position: absolute;
+  margin-left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-submit:disabled {
+  background-color: #3366FF85;
 }

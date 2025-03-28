@@ -1,0 +1,33 @@
+.third-step {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.third-step h1 {
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+.third-content .table-data {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.third-content .table-data table {
+    max-width: 500px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.third-content .table-data table td {
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.third-content .table-data table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
